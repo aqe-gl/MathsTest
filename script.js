@@ -5,50 +5,53 @@ let mul = document.querySelector(".mul");
 let div = document.querySelector(".div");
 let correctAnswer = 0
 
-add.onclick = function () {
-    correctAnswer = 5 + 5;
-    let userAnswer = parseInt(prompt("5 + 5 = ", ''));
-    console.log(userAnswer, correctAnswer);
+function randint(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
+function checkAnswer(correctAnswer, userAnswer) {
     if (correctAnswer === userAnswer) {
         alert("You're right");
     }
     else {
         alert("Oh no! " + userAnswer + " is wrong. The right answer is " + correctAnswer + '.');
     }
+}
+
+add.onclick = function () {
+    let numA = randint(1, 9);
+    let numB = randint(1, 9);
+    correctAnswer = numA + numB;
+    let userAnswer = parseInt(prompt(numA + ' + ' + numB + " = " , ''));
+    console.log(userAnswer, correctAnswer);
+
+    checkAnswer(correctAnswer, userAnswer);
 };
 
 sub.onclick = function () {
-    correctAnswer = 10 - 5;
-    let userAnswer = parseInt(prompt("10 -5 = ", ''));
+    let numA = randint(1, 9);
+    let numB = randint(1, 9);
+    correctAnswer = numA - numB;
+    let userAnswer = parseInt(prompt(numA + ' - ' + numB + " = " , ''))
     console.log(userAnswer, correctAnswer);
-    if (correctAnswer === userAnswer) {
-        alert("You're right");
-    }
-    else {
-        alert("Oh no! " + userAnswer + " is wrong. The right answer is " + correctAnswer + '.');
-    }
+    checkAnswer(correctAnswer, userAnswer);
 }
 
 mul.onclick = function () {
-    correctAnswer = 10 * 5;
-    let userAnswer = parseInt(prompt("10 * 5 = ", ''));
+    let numA = randint(1, 9);
+    let numB = randint(1, 9);
+    correctAnswer = numA * numB;
+    let userAnswer = parseInt(prompt(numA + ' * ' + numB + " = " , ''))
     console.log(userAnswer, correctAnswer);
-    if (correctAnswer === userAnswer) {
-        alert("You're right");
-    }
-    else {
-        alert("Oh no! " + userAnswer + " is wrong. The right answer is " + correctAnswer + '.');
-    }
+    checkAnswer(correctAnswer, userAnswer);
 }
 
 div.onclick = function () {
-    correctAnswer = 10 / 5;
-    let userAnswer = parseInt(prompt("10 / 5 = ", ''))
-    if (correctAnswer === userAnswer) {
-        alert("You're right");
-    }
-    else {
-        alert("Oh no! " + userAnswer + " is wrong. The right answer is " + correctAnswer + '.');
-    }
+    let numA = randint(1, 9);
+    let numB = randint(1, 9);
+    correctAnswer = numA / numB;
+    correctAnswer = Math.round(correctAnswer);
+    alert("Please round the answer to a whole number. If n.5 or more round up. If n.4 or lower round down.");
+    let userAnswer = parseInt(prompt(numA + ' / ' + numB + " = " , ''));
+    checkAnswer(correctAnswer, userAnswer);
 }
