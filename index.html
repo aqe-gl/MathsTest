@@ -6,19 +6,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p>Press the button to answer a question</p>
-    <button class="add">Adding</button>
-    <button class="sub">Subtracting</button>
-    <button class="mul">Multiplying</button>
-    <button class="div">Dividing</button>
-
-    <p>Select difficulty level</p>
-    <select>
-        <option value="easy">Easy 1-9</option>
-        <option value="medium">Medium 10-99</option>
-        <option value="hard">Hard 100-999</option>
-    </select>
-
-    <script src="script.js"></script>
+<div class="parent">
+    <div class="content">
+        <div class="text">
+            <h2>Press the button to answer a question</h2>
+        </div>
+        <div class="buttons">
+            <button class="add">Adding</button>
+            <button class="sub">Subtracting</button>
+            <button class="mul">Multiplying</button>
+            <button class="div">Dividing</button>
+        </div>
+        <div class="difficulty">
+        <p>Select difficulty level</p>
+        <label>
+            <select>
+                <option value="easy">Easy 1-9</option>
+                <option value="medium">Medium 10-99</option>
+                <option value="hard">Hard 100-999</option>
+            </select>
+        </label>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
